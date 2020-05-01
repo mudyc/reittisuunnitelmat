@@ -13,4 +13,11 @@ const get = async url => {
     })
 }
 
-const routes = await get('routes.json')
+const run = async () => {
+    const routes = await get('routes.json')
+    routes.map(route =>
+         document.body.innerHTML += `<div>${route.name}</div>`
+    )
+}
+
+run()
